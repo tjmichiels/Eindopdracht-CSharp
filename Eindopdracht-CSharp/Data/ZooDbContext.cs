@@ -14,6 +14,22 @@ public class ZooDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Configure entity relationships
+        // Animal -> Category
+        modelBuilder.Entity<Animal>()
+            .HasOne(a => a.Category)
+            .WithMany(c => c.Animals)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        // Animal -> Enclosure
+        modelBuilder.Entity<Animal>()
+            .HasOne(a => a.Enclosure)
+            .WithMany(e => e.Animals)
+            .OnDelete(DeleteBehavior.SetNull);
+
+        // Enclosure -> Zoo
+        modelBuilder.Entity<Enclosure>()
+            .HasOne<Zoo>()
+            .WithMany(z => z.Enclosures)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }
