@@ -4,7 +4,4 @@ public enum Species
 {
     Cat,
     Dog,
-    Meow,
-    Masin,
-    
 }
