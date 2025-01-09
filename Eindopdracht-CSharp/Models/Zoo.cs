@@ -9,4 +9,9 @@ public class Zoo
     public string Name { get; set; }
     
     public List<Enclosure> Enclosures { get; set; }
+
+    public Zoo()
+    {
+        
+    }
 }

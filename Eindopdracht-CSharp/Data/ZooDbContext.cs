@@ -23,13 +23,13 @@ public class ZooDbContext : DbContext
             .HasOne(a => a.Category)
             .WithMany(c => c.Animals)
             .OnDelete(DeleteBehavior.SetNull);
-
+        
         // Animal -> Enclosure
         modelBuilder.Entity<Animal>()
             .HasOne(a => a.Enclosure)
             .WithMany(e => e.Animals)
             .OnDelete(DeleteBehavior.SetNull);
-
+        
         // Enclosure -> Zoo
         modelBuilder.Entity<Enclosure>()
             .HasOne<Zoo>()

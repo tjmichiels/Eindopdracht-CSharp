@@ -5,36 +5,24 @@ namespace Eindopdracht_CSharp.Models;
 
 public class Animal
 {
-    [Key] public int Id { get; }
+    [Key] public int Id { get; set; }
 
     [MaxLength(100)] public string Name { get; set; }
 
-    [Required] public Species Species { get; }
+    [Required] public Species Species { get; set;  }
 
+    public int? CategoryId { get; set; }
     public Category Category { get; set; }
-    public Enclosure Enclosure { get; set; }
-    public AnimalSize Size { get; }
-    public DietaryClass DietaryClass { get; }
-    public ActivityPattern ActivityPattern { get; }
+    public Enclosure? Enclosure { get; set; }
+    public AnimalSize Size { get; set; }
+    public DietaryClass DietaryClass { get; set; }
+    public ActivityPattern ActivityPattern { get; set; }
     public HashSet<Animal> Prey { get; set; } = new HashSet<Animal>();
     public double SpaceRequirement { get; set; } // square meters per animal
     public SecurityLevel SecurityRequirement { get; set; }
 
-    protected Animal()
+    public Animal()
     {
-    }
-
-    public Animal(int id, string name, Species species, AnimalSize size, DietaryClass dietaryClass,
-        ActivityPattern activityPattern, double spaceRequirement, SecurityLevel securityRequirement)
-    {
-        Id = id;
-        Name = name;
-        Species = species;
-        Size = size;
-        DietaryClass = dietaryClass;
-        ActivityPattern = activityPattern;
-        SpaceRequirement = spaceRequirement;
-        SecurityRequirement = securityRequirement;
     }
 
     public string Sunrise()
