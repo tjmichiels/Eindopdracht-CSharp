@@ -1,8 +1,13 @@
-﻿namespace Eindopdracht_CSharp.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Eindopdracht_CSharp.Models;
 
 public class Category
 {
     public int Id { get; set; }
+    
+    [Required]
+    [MaxLength(100)]
     public string Name { get; set; }
     public List<Animal> Animals { get; set; } = new();
 
