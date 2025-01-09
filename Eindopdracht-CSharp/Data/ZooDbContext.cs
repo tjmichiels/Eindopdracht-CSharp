@@ -14,6 +14,10 @@ public class ZooDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Primary keys
+        modelBuilder.Entity<Animal>()
+            .HasKey(a => a.Id);
+        
         // Animal -> Category
         modelBuilder.Entity<Animal>()
             .HasOne(a => a.Category)

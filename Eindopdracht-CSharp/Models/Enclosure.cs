@@ -1,9 +1,11 @@
-﻿using Eindopdracht_CSharp.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using Eindopdracht_CSharp.Enums;
 
 namespace Eindopdracht_CSharp.Models;
 
 public class Enclosure
 {
+    [Key]
     public int Id { get; set; }
     public string Name { get; set; }
     public List<Animal> Animals { get; set; } = new();

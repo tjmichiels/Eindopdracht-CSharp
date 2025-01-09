@@ -1,7 +1,10 @@
-﻿namespace Eindopdracht_CSharp.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Eindopdracht_CSharp.Models;
 
 public class Zoo
 {
+    [Key]
     public int Id { get; set; }
     public string Name { get; set; }
     
