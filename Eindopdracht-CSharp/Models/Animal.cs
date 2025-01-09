@@ -19,7 +19,7 @@ public class Animal
     public AnimalSize Size { get; }
     public DietaryClass DietaryClass { get; }
     public ActivityPattern ActivityPattern { get; }
-    public HashSet<Animal> Prey { get; set; }
+    public HashSet<Animal> Prey { get; set; } = new HashSet<Animal>();
     public double SpaceRequirement { get; set; } // square meters per animal
     public SecurityLevel SecurityRequirement { get; set; }
 
@@ -34,7 +34,6 @@ public class Animal
         ActivityPattern = activityPattern;
         SpaceRequirement = spaceRequirement;
         SecurityRequirement = securityRequirement;
-        Prey = new HashSet<Animal>();
     }
 
     public string Sunrise()
