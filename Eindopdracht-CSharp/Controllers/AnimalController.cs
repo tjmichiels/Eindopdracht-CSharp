@@ -60,16 +60,11 @@ namespace Eindopdracht_CSharp.Controllers
         {
             if (ModelState.IsValid)
             {
-                // if (animal.CategoryId == null)
-                // {
-                //     animal.CategoryId = 1; 
-                // }
-
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
+            
             return View(animal);
         }
 

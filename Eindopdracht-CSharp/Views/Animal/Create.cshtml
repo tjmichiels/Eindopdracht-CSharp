@@ -22,7 +22,7 @@
                 <select asp-for="Species" class="form-control">
                     @foreach (var item in Enum.GetValues(typeof(Eindopdracht_CSharp.Enums.Species)))
                     {
-                        <option value="@item.ToString()">@item.ToString()</option>
+                        <option value="@((int)item)">@item.ToString()</option>
                     }
                 </select>
                 <span asp-validation-for="Species" class="text-danger">
@@ -33,7 +33,7 @@
                 <select asp-for="Size" class="form-control">
                     @foreach (var item in Enum.GetValues(typeof(Eindopdracht_CSharp.Enums.AnimalSize)))
                     {
-                        <option value="@item.ToString()">@item.ToString()</option>
+                        <option value="@((int)item)">@item.ToString()</option>
                     }
                 </select>
                 <span asp-validation-for="Size" class="text-danger"></span>
@@ -43,7 +43,7 @@
                 <select asp-for="DietaryClass" class="form-control">
                     @foreach (var item in Enum.GetValues(typeof(Eindopdracht_CSharp.Enums.DietaryClass)))
                     {
-                        <option value="@item.ToString()">@item.ToString()</option>
+                        <option value="@((int)item)">@item.ToString()</option>
                     }
                 </select>
                 <span asp-validation-for="DietaryClass" class="text-danger"></span>
@@ -53,7 +53,7 @@
                 <select asp-for="ActivityPattern" class="form-control">
                     @foreach (var item in Enum.GetValues(typeof(Eindopdracht_CSharp.Enums.ActivityPattern)))
                     {
-                        <option value="@item.ToString()">@item.ToString()</option>
+                        <option value="@((int)item)">@item.ToString()</option>
                     }
                 </select>
                 <span asp-validation-for="ActivityPattern" class="text-danger"></span>
@@ -68,7 +68,7 @@
                 <select asp-for="SecurityRequirement" class="form-control">
                     @foreach (var item in Enum.GetValues(typeof(Eindopdracht_CSharp.Enums.SecurityLevel)))
                     {
-                        <option value="@item.ToString()">@item.ToString()</option>
+                        <option value="@((int)item)">@item.ToString()</option>
                     }
                 </select>
                 <span asp-validation-for="SecurityRequirement" class="text-danger"></span>

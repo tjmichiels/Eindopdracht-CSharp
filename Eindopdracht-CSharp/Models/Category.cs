@@ -7,7 +7,7 @@ public class Category
     [Key] public int Id { get; set; }
 
     [Required] [MaxLength(100)] public string Name { get; set; }
-    public List<Animal> Animals { get; set; } = new();
+    public ICollection<Animal> Animals { get; set; } = new List<Animal>();
 
     public Category()
     {
