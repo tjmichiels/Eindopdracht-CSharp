@@ -12,7 +12,7 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
-        
+
         //
         builder.Services.AddDbContext<ZooDbContext>(options =>
             options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Dierentuin20;Trusted_Connection=True;"));

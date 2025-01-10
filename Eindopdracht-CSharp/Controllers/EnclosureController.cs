@@ -54,7 +54,8 @@ namespace Eindopdracht_CSharp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Climate,HabitatType,SecurityLevel,Size")] Enclosure enclosure)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Name,Climate,HabitatType,SecurityLevel,Size")] Enclosure enclosure)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +63,7 @@ namespace Eindopdracht_CSharp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(enclosure);
         }
 
@@ -78,6 +80,7 @@ namespace Eindopdracht_CSharp.Controllers
             {
                 return NotFound();
             }
+
             return View(enclosure);
         }
 
@@ -86,7 +89,8 @@ namespace Eindopdracht_CSharp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Climate,HabitatType,SecurityLevel,Size")] Enclosure enclosure)
+        public async Task<IActionResult> Edit(int id,
+            [Bind("Id,Name,Climate,HabitatType,SecurityLevel,Size")] Enclosure enclosure)
         {
             if (id != enclosure.Id)
             {
@@ -111,8 +115,10 @@ namespace Eindopdracht_CSharp.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(enclosure);
         }
 

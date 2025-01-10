@@ -62,6 +62,7 @@ namespace Eindopdracht_CSharp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(zoo);
         }
 
@@ -78,6 +79,7 @@ namespace Eindopdracht_CSharp.Controllers
             {
                 return NotFound();
             }
+
             return View(zoo);
         }
 
@@ -111,8 +113,10 @@ namespace Eindopdracht_CSharp.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(zoo);
         }
 

@@ -7,7 +7,7 @@ public enum HabitatType
     Aquatic = 2,
     Desert = 4,
     Grassland = 8
-    
+
     // 1 - Forest
     // 2 - Aquatic
     // 3 - Forest, Aquatic

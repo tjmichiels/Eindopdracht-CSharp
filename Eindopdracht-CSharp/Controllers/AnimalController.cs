@@ -54,7 +54,9 @@ namespace Eindopdracht_CSharp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Species,Size,DietaryClass,ActivityPattern,SpaceRequirement,SecurityRequirement")] Animal animal)
+        public async Task<IActionResult> Create(
+            [Bind("Id,Name,Species,Size,DietaryClass,ActivityPattern,SpaceRequirement,SecurityRequirement")]
+            Animal animal)
         {
             if (ModelState.IsValid)
             {
@@ -62,11 +64,12 @@ namespace Eindopdracht_CSharp.Controllers
                 // {
                 //     animal.CategoryId = 1; 
                 // }
-                
+
                 _context.Add(animal);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(animal);
         }
 
@@ -83,6 +86,7 @@ namespace Eindopdracht_CSharp.Controllers
             {
                 return NotFound();
             }
+
             return View(animal);
         }
 
@@ -91,7 +95,9 @@ namespace Eindopdracht_CSharp.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Species,Size,DietaryClass,ActivityPattern,SpaceRequirement,SecurityRequirement")] Animal animal)
+        public async Task<IActionResult> Edit(int id,
+            [Bind("Id,Name,Species,Size,DietaryClass,ActivityPattern,SpaceRequirement,SecurityRequirement")]
+            Animal animal)
         {
             if (id != animal.Id)
             {
@@ -116,8 +122,10 @@ namespace Eindopdracht_CSharp.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(animal);
         }
 
@@ -158,7 +166,5 @@ namespace Eindopdracht_CSharp.Controllers
         {
             return _context.Animals.Any(e => e.Id == id);
         }
-        
-        
     }
 }
